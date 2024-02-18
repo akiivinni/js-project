@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        #form1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            background-image: url(./bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #main {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 60%;
+            height: 50%;
+            padding: 20px;
+            margin: 30px;
+            box-sizing: border-box;
+        }
+
+        label {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 50%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        #button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #00b300;
+        }
+    </style>
+</head>
+<body>
+    <div id="form1">
+        <form id="main">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username"><br/><br/>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="pp"><br/><br/>
+            <button id="button" onclick="return valid2()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        var attempt = 3; // Initialize the attempt variable
+
+        function valid2() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('pp').value;
+            var key = "user_" + username;
+            var storedPassword = localStorage.getItem(key + "_password");
+
+            if (password === storedPassword) {
+                alert("Login successful");
+                window.location = "https://akiivinni.github.io/myntra/"; 
+                return false;
+            } else {
+                attempt--;
+                alert("Incorrect username or password. You have " + attempt + " attempt(s) left.");
+
+                if (attempt === 0) {
+                    document.getElementById("button").disabled = true;
+                    return false;
+                }
+            }
+            return false; // Prevent form submission
+        }
+    </script>
+</body>
+</html>

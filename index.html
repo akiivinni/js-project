@@ -1,0 +1,760 @@
+
+<style>
+    *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.4s;
+    }
+    body{
+    font-family: sans-serif;
+    
+    
+
+
+    }
+    .background
+    {
+        height:100vh;
+    width:100%;
+    
+    }
+    
+    
+    a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: bold;
+    }
+    
+    
+    .navbar{
+    display: flex;
+    height: 5rem;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-bottom: 2px solid rgb(223, 251, 219);
+    }
+    
+    
+    .logo img{
+    width: 4rem;
+    height: 4rem;
+    margin-left:1rem;
+    }
+    
+    .hamburger-menu{
+    padding-right: 1.5rem;
+    cursor: pointer;
+    }
+    
+    .hamburger-menu .line{
+       display: block;
+       width:2.5rem;
+       height: 2px;
+       margin-bottom: 10px;
+       background-color: black;
+       cursor: pointer;
+    }
+    
+    .nav-menu{
+    position: fixed;
+    width: 94%;
+    top: 6rem;
+    left: 18px;
+    background-color: rgb(255, 255, 255);
+    font-weight: 600;
+    
+    }
+    .nav-menu a{
+    display: block;
+    text-align: center;
+    padding: 5px 0;
+    }
+    .nav-menu a:hover{
+    background-color: rgb(223, 251, 219);
+    }
+    
+    .hide{
+    display: none;
+    }
+    .hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./banner.jpg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+}
+#con {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    width: 300px;
+    background-color: #fff;
+    vertical-align: top;
+}
+
+
+.card h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+#con
+{
+    background-color: #555;
+}
+.container {
+            display: flex;
+            align-items: center; 
+        }
+        .container img {
+            max-width: 50%; 
+            margin-right: 20px;
+        }
+#connect
+{
+    text-align: justify;
+    font-size: 25px;
+}
+#round
+{
+    border-radius: 40%;
+    margin: 20px;
+}
+#lm
+{
+    color:black;
+    font-size: 40px;
+    text-align: center;
+    margin:20px;
+    padding:20px;
+    border:2px;
+}
+.form1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    background-image: url(./bg.jpg);
+    background-repeat: no-repeat;
+   background-size: cover;
+}
+
+#main {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    @media screen and (min-width:600px){
+    .navbar{
+        justify-content: space-around;
+    }
+    .nav-menu{
+        display: block;
+        position: static;
+        width: auto;
+        margin-right:20px;
+        background: none;
+    }
+    .nav-menu a{
+        display: inline-block;
+        padding: 15px 20px;
+    }
+    .nav-menu a:hover{
+        background-color: rgb(223, 251, 219);
+        border-radius: 5px;
+    }
+    .hamburger-menu{
+        display: none;
+    }
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tech Hiring page</title>
+
+    <style>
+        *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        transition: all 0.4s;
+        }
+        body{
+        font-family: sans-serif;
+        
+        
+    
+    
+        }
+        .background
+        {
+            height:100vh;
+        width:100%;
+        
+        }
+        
+        
+        a{
+        text-decoration: none;
+        color: black;
+        font-size: 1.3rem;
+        font-weight: bold;
+        }
+        
+        
+        .navbar{
+        display: flex;
+        height: 5rem;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1rem;
+        border-bottom: 2px solid rgb(223, 251, 219);
+        }
+        
+        
+        .logo img{
+        width: 4rem;
+        height: 4rem;
+        margin-left:1rem;
+        }
+        
+        .hamburger-menu{
+        padding-right: 1.5rem;
+        cursor: pointer;
+        }
+        
+        .hamburger-menu .line{
+           display: block;
+           width:2.5rem;
+           height: 2px;
+           margin-bottom: 10px;
+           background-color: black;
+           cursor: pointer;
+        }
+        
+        .nav-menu{
+        position: fixed;
+        width: 94%;
+        top: 6rem;
+        left: 18px;
+        background-color: rgb(255, 255, 255);
+        font-weight: 600;
+        
+        }
+        .nav-menu a{
+        display: block;
+        text-align: center;
+        padding: 5px 0;
+        }
+        .nav-menu a:hover{
+        background-color: rgb(223, 251, 219);
+        }
+        
+        .hide{
+        display: none;
+        }
+        .hero-image {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./banner.jpg");
+      height: 50%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+    
+    .hero-text {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+    }
+    
+    .hero-text button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 10px 25px;
+      color: black;
+      background-color: #ddd;
+      text-align: center;
+      cursor: pointer;
+    }
+    
+    .hero-text button:hover {
+      background-color: #555;
+      color: white;
+    }
+    #con {
+        display: flex; /* Change to flex to display cards side by side */
+        flex-wrap: wrap; /* Ensure cards wrap to next row if there's not enough space */
+        justify-content: center; /* Center the cards horizontally */
+    }
+    
+    .card {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 20px;
+        width: 300px;
+        background-color: #fff;
+        /* Remove display: inline-block; */
+        vertical-align: top;
+    }
+    
+    
+    .card h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .card p {
+        font-size: 1rem;
+        color: #666;
+    }
+    
+    .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    #con
+    {
+        background-color: #555;
+    }
+    .container {
+                display: flex;
+                align-items: center; 
+            }
+            .container img {
+                max-width: 50%; 
+                margin-right: 20px;
+            }
+    #connect
+    {
+        text-align: justify;
+        font-size: 25px;
+    }
+    #round
+    {
+        border-radius: 40%;
+        margin: 20px;
+    }
+    #lm
+    {
+        color:black;
+        font-size: 40px;
+        text-align: center;
+        margin:20px;
+        padding:20px;
+        border:2px;
+    }
+    .form1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f5f5f5;
+        background-image: url(./bg.jpg);
+        background-repeat: no-repeat;
+       background-size: cover;
+    }
+    
+    #main {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    label {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    button:hover {
+        background-color: #0056b3;
+    }
+    
+        @media screen and (min-width:600px){
+        .navbar{
+            justify-content: space-around;
+        }
+        .nav-menu{
+            display: block;
+            position: static;
+            width: auto;
+            margin-right:20px;
+            background: none;
+        }
+        .nav-menu a{
+            display: inline-block;
+            padding: 15px 20px;
+        }
+        .nav-menu a:hover{
+            background-color: rgb(223, 251, 219);
+            border-radius: 5px;
+        }
+        .hamburger-menu{
+            display: none;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="/">
+                    <img src="./download.jfif" alt="gfg_logo">
+                </a>
+            </div>
+            <div class="hamburger-menu">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <div class="nav-menu hide">
+                <a href="#">Home</a>
+                <a href="#">Career</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
+    </header>
+    <div class="hero-image">
+        <div class="hero-text">
+          <h1 style="font-size:30px;color:brown">Hello Tech Buddies</h1>
+          <p>Start Your Career in 10000 Coders</p>
+          <button>Hiring Alert</button>
+        </div>
+      </div>
+      <h3 id = "lm">Offering Courses</h3>
+<div id = "con">
+
+</div>
+
+<div class="container">
+    <img src="./full-stack-web-development.jpg" alt="Image"id = "round">
+    <p id = "connect">Never again worry about getting a well-paying IT job. This online training program is all you need to get hired by top software companies that you secretly desire to work for. And start earning a average of 4 lakh per annum—GUARANTEED!</p>
+ </div>
+
+
+ <div class="form1">
+    <form name="main" onsubmit="return valid(event)">
+        <h3 style="font-size: 30px; margin:20px;">Registration Form</h3>
+       
+        <label for="user">Full Name:</label>
+        <input type="text" name="user"><br/><br/>
+        
+        <label for="ema">Email:</label>
+        <input type="email" name="ema"><br/><br/>
+        
+        <label for="ph">Phone number:</label>
+        <input type="tel" name="ph"><br/><br/>
+        
+        <label for="ps">Password:</label>
+        <input type="password" name="ps" id="password" oninput="checkPasswordStrength()"><br/><br/>
+        <span id="password-strength" style = "width:100%; font-size: 30px;"></span><br/><br/>
+        
+        <button type="submit" onclick="sub()">Submit</button>
+    </form>
+</div>
+
+
+
+
+</body>
+<script>
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('hide');
+    });
+
+
+    //script for forms
+
+    function valid(event) {
+    event.preventDefault(); // prevent form submission by default
+    
+    var fn = document.forms.main.user.value;
+    var email = document.forms.main.ema.value;
+    var phone = document.forms.main.ph.value;
+    var password = document.forms.main.ps.value;
+
+    if (fn.trim() === "") {
+        alert("Name cannot be blank.");
+        return false;
+    }
+    if (!validateEmail(email)) {
+        alert("Please enter a valid email.");
+        return false;
+    }
+    if (isNaN(phone)) {
+        alert("Phone number allows only numbers.");
+        return false;
+    }
+    if (password.length < 8) { // changed from 6 to 8
+        alert("Password should be at least 8 characters.");
+        return false;
+    }
+
+    let key = "user_" + fn;
+    localStorage.setItem(key + "_fn", fn);
+    localStorage.setItem(key + "_email", email);
+    localStorage.setItem(key + "_phone", phone);
+    localStorage.setItem(key + "_password", password);
+
+    alert("Registration successful.");
+    return true;
+}
+function sub()
+    {
+        window.location.assign("login.html")
+    }
+
+
+    function checkPasswordStrength() {
+    var password = document.getElementById("password").value;
+    var strengthBadge = document.getElementById("password-strength");
+
+   
+    if (password.length < 8) {
+        strengthBadge.style.backgroundColor = "red";
+        strengthBadge.textContent = "Weak";
+    } else if (password.length < 12) {
+        strengthBadge.style.backgroundColor = "orange";
+        strengthBadge.textContent = "Medium";
+    } else {
+        strengthBadge.style.backgroundColor = "green";
+        strengthBadge.textContent = "Strong";
+    }
+}
+   
+
+
+
+    
+
+
+
+var data = 
+
+    [
+    {
+        "id": 1,
+        "title": "Full stack development",
+        "price": 30000,
+        "description": "Full stack development is the end-to-end development of applications. It includes both the front end and back end of an application. The front end is usually accessed by a client, and the back end forms the core of the application where all the business logic is applied.",
+        "category": "men's clothing",
+        "image": "full-stack-web-development.jpg",
+        "rating": {
+            "rate": 3.9,
+            "count": 120
+        }
+    },
+    {
+        "id": 2,
+        "title": "frontend development ",
+        "price": 22.3,
+        "description": "A Front-End Developer is someone who creates websites and web applications. The difference between Front-End and Back-End is that Front-End refers to how a web page looks, while back-end refers to how it works. You can think of Front-End as client-side and Back-End as server-side.",
+        "category": "men's clothing",
+        "image": "360_F_292887204_2wH041phSQo70eqaE9GRqFvn5MmQ4B8w.jpg",
+        "rating": {
+            "rate": 4.1,
+            "count": 259
+        }
+    },
+    {
+        "id": 3,
+        "title": "Backend Development",
+        "price": 55.99,
+        "description": "Back-end developers are the experts who build and maintain the mechanisms that process data and perform actions on websites. Unlike front-end developers, who control everything you can see on a website, back-end developers are involved in data storage, security, and other server-side functions that you cannot see",
+        "category": "men's clothing",
+        "image": "360_F_299621124_vutDKbNwRJG6poJRQQIMYfsc4tJCTO5E.jpg",
+        "rating": {
+            "rate": 4.7,
+            "count": 500
+        }
+    },]
+//     var divi = document.createElement('p');
+// divi.innerHTML = "<h3>OfferCourses</h3>";
+// divi.style.textAlign = "center";
+// divi.style.margin="20px";
+// divi.style.fontSize = "30px"
+// document.body.appendChild(divi);
+
+
+for (var i = 0; i < data.length; i++) {
+    var container = document.createElement('div');
+    container.classList.add('card');
+
+    var cardLink = document.createElement('a');
+    cardLink.href = "https://www.10000coders.co/";
+
+    var title = document.createElement('h1');
+    title.innerText = data[i].title;
+    container.appendChild(title);
+    cardLink.appendChild(title)
+
+    var desc = document.createElement('p');
+    desc.innerText = data[i].description;
+    container.appendChild(desc);
+    cardLink.appendChild(desc)
+
+    var image = document.createElement('img');
+    image.src = data[i].image;
+   cardLink.appendChild(image)
+    
+    container.appendChild(image);
+    container.appendChild(cardLink);
+
+    document.getElementById('con').appendChild(container); 
+}
+
+
+var divi = document.createElement('div');
+divi.classList.add('ghf');
+
+
+var contactus = document.createElement('fieldset');
+
+
+var c1 = document.createElement('legend');
+
+
+contactus.appendChild(divi);
+
+
+c1.appendChild(contactus);
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</html>
